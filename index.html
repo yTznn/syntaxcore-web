@@ -18,7 +18,7 @@
                 Arquitetura de Software e Consultoria Especializada em ERPs Health & Agro.
             </p>
             
-            <a href="https://wa.me/5564999999999" target="_blank" 
+            <a href="https://wa.me/5564992852137" target="_blank" 
                class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-green-600 rounded-full hover:bg-green-500 transition-all shadow-lg hover:shadow-green-500/20">
                 <i class="fab fa-whatsapp mr-3 text-2xl"></i>
                 Falar com Elielton agora
@@ -29,22 +29,10 @@
     <section class="py-16 px-6 max-w-6xl mx-auto">
         <h2 class="text-3xl font-bold mb-12 text-center border-b border-slate-700 pb-4">Conheça Nossas Soluções</h2>
         
-        <div class="relative rounded-2xl border-2 border-slate-700 shadow-xl shadow-slate-950/20 bg-slate-800 p-2 overflow-hidden hover:border-blue-500 transition-colors group">
+        <div id="carousel-container" class="relative rounded-2xl border-2 border-slate-700 shadow-xl shadow-slate-950/20 bg-slate-800 p-2 overflow-hidden hover:border-blue-500 transition-colors group">
             
-            <div class="flex overflow-x-auto snap-x snap-mandatory space-x-2 pb-4" style="scrollbar-width: thin; scrollbar-color: #334155 #1e293b;">
+            <div id="carousel" class="flex overflow-x-auto snap-x snap-mandatory space-x-2 pb-4" style="scrollbar-width: thin; scrollbar-color: #334155 #1e293b;">
                 
-                <div class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-lg overflow-hidden flex flex-col p-4 hover:bg-slate-950 transition-colors">
-                    <img src="img/event-flow.png" alt="Plataforma de Gestão Event Flow" class="w-full h-48 object-contain mb-4 rounded-md">
-                    <h3 class="font-bold text-xl text-white mb-2">Event Flow - Arquitetura</h3>
-                    <p class="text-slate-400 text-sm">Estrutura base para orquestração de eventos em sistemas distribuídos.</p>
-                </div>
-                
-                <div class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-lg overflow-hidden flex flex-col p-4 hover:bg-slate-950 transition-colors">
-                    <img src="img/event-flow-02.png" alt="Event Flow Dashboard Avançado" class="w-full h-48 object-contain mb-4 rounded-md">
-                    <h3 class="font-bold text-xl text-white mb-2">Event Flow - Dashboard</h3>
-                    <p class="text-slate-400 text-sm">Visão analítica e controle de performance para processos.</p>
-                </div>
-
                 <div class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-lg overflow-hidden flex flex-col p-4 hover:bg-slate-950 transition-colors">
                     <img src="img/financeiro.png" alt="Módulo Financeiro do ERP" class="w-full h-48 object-contain mb-4 rounded-md">
                     <h3 class="font-bold text-xl text-white mb-2">Gestão Financeira Enterprise</h3>
@@ -71,20 +59,18 @@
 
             </div>
 
-            <div class="absolute inset-y-0 left-0 flex items-center px-4 group-hover:opacity-100 opacity-0 transition-opacity pointer-events-none md:pointer-events-auto">
-                <div class="bg-slate-900/50 p-2 rounded-full border border-slate-700 text-slate-500 hover:text-blue-500">
+            <div class="absolute inset-y-0 left-0 flex items-center px-4 group-hover:opacity-100 opacity-0 transition-opacity pointer-events-none md:pointer-events-auto z-10">
+                <div onclick="scrollManual(-1)" class="bg-slate-900/80 p-3 cursor-pointer pointer-events-auto rounded-full border border-slate-700 text-slate-400 hover:text-blue-500 hover:border-blue-500 transition-all">
                     <i class="fas fa-chevron-left text-xl"></i>
                 </div>
             </div>
-            <div class="absolute inset-y-0 right-0 flex items-center px-4 group-hover:opacity-100 opacity-0 transition-opacity pointer-events-none md:pointer-events-auto">
-                <div class="bg-slate-900/50 p-2 rounded-full border border-slate-700 text-slate-500 hover:text-blue-500">
+            <div class="absolute inset-y-0 right-0 flex items-center px-4 group-hover:opacity-100 opacity-0 transition-opacity pointer-events-none md:pointer-events-auto z-10">
+                <div onclick="scrollManual(1)" class="bg-slate-900/80 p-3 cursor-pointer pointer-events-auto rounded-full border border-slate-700 text-slate-400 hover:text-blue-500 hover:border-blue-500 transition-all">
                     <i class="fas fa-chevron-right text-xl"></i>
                 </div>
             </div>
             
         </div>
-        
-        <p class="text-center text-sm text-slate-600 mt-6 italic md:hidden">Deslize para o lado para ver todos os projetos.</p>
     </section>
 
     <footer class="py-10 text-center border-t border-slate-800 mt-10">
@@ -93,5 +79,42 @@
         </p>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.getElementById('carousel');
+            const container = document.getElementById('carousel-container');
+            let autoScrollTimer;
+
+            // Função para rolar o carrossel
+            function scrollNext() {
+                const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+                const itemWidth = carousel.firstElementChild.clientWidth + 8; // largura + gap
+                
+                // Se chegou no final, volta para o começo, senão anda 1 item
+                if (carousel.scrollLeft >= maxScroll - 10) {
+                    carousel.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    carousel.scrollBy({ left: itemWidth, behavior: 'smooth' });
+                }
+            }
+
+            // Inicia o loop automático (3000 = 3 segundos)
+            function startAutoScroll() {
+                autoScrollTimer = setInterval(scrollNext, 3000);
+            }
+
+            startAutoScroll();
+
+            // Pausa a animação se o mouse passar por cima (para o cliente conseguir ler)
+            container.addEventListener('mouseenter', () => clearInterval(autoScrollTimer));
+            container.addEventListener('mouseleave', () => startAutoScroll());
+
+            // Função para os botões manuais (setinhas)
+            window.scrollManual = function(direction) {
+                const itemWidth = carousel.firstElementChild.clientWidth + 8;
+                carousel.scrollBy({ left: itemWidth * direction, behavior: 'smooth' });
+            }
+        });
+    </script>
 </body>
 </html>
