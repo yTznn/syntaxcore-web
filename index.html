@@ -3,118 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SyntaxCore | Desenvolvimento de Software Robusto</title>
+    <title>SyntaxCore | Engenharia de Software e Consultoria ERP</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans">
 
-    <section class="py-20 px-6 text-center bg-gradient-to-b from-slate-800 to-slate-900">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-5xl font-extrabold tracking-tight text-white mb-4">
-                SYNTAX<span class="text-blue-500">CORE</span>
-            </h1>
-            <p class="text-xl text-slate-400 mb-8">
-                Arquitetura de Software e Consultoria Especializada em ERPs Health & Agro.
-            </p>
-            
-            <a href="https://wa.me/5564992852137" target="_blank" 
-               class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-green-600 rounded-full hover:bg-green-500 transition-all shadow-lg hover:shadow-green-500/20">
-                <i class="fab fa-whatsapp mr-3 text-2xl"></i>
-                Falar com Elielton agora
+    <!-- Header Padrão -->
+    <nav class="bg-slate-900 border-b border-slate-800 py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="img/logo-syntrax-core.png" alt="SyntaxCore Logo" class="h-12 w-auto object-contain">
+                <span class="text-2xl font-bold tracking-tighter text-white">SYNTAX<span class="text-blue-500 font-light">CORE</span></span>
             </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest text-slate-400">
+                <a href="index.html" class="text-blue-500">Home</a>
+                <a href="sobre.html" class="hover:text-blue-500 transition-colors">Sobre</a>
+                <a href="servicos.html" class="hover:text-blue-500 transition-colors">Serviços</a>
+                <a href="ecossistema.html" class="hover:text-blue-500 transition-colors">Ecossistema</a>
+            </div>
+            <a href="https://wa.me/5564992852137" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full text-sm font-bold transition-all">CONTATO</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-24 px-6 text-center bg-gradient-to-b from-slate-800 to-slate-900">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-6xl font-extrabold tracking-tight text-white mb-6 italic">Arquitetura Robusta para Negócios Complexos</h1>
+            <p class="text-xl text-slate-400 mb-10 leading-relaxed">Consultoria especializada em ecossistemas ERP, Governança de TI e desenvolvimento Full Stack .NET.</p>
+            <div class="flex justify-center space-x-4">
+                <span class="px-4 py-1 bg-slate-700 rounded-full text-xs font-semibold text-blue-400 uppercase tracking-widest border border-slate-600">.NET Ecosystem</span>
+                <span class="px-4 py-1 bg-slate-700 rounded-full text-xs font-semibold text-blue-400 uppercase tracking-widest border border-slate-600">Applied AI</span>
+                <span class="px-4 py-1 bg-slate-700 rounded-full text-xs font-semibold text-blue-400 uppercase tracking-widest border border-slate-600">IT Governance</span>
+            </div>
         </div>
     </section>
 
-    <section class="py-16 px-6 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-12 text-center border-b border-slate-700 pb-4">Conheça Nossas Soluções</h2>
-        
-        <div id="carousel-container" class="relative rounded-2xl border-2 border-slate-700 shadow-xl shadow-slate-950/20 bg-slate-800 p-2 overflow-hidden hover:border-blue-500 transition-colors group">
-            
-            <div id="carousel" class="flex overflow-x-auto snap-x snap-mandatory space-x-2 pb-4" style="scrollbar-width: thin; scrollbar-color: #334155 #1e293b;">
-                
-                <div class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-lg overflow-hidden flex flex-col p-4 hover:bg-slate-950 transition-colors">
-                    <img src="img/financeiro.png" alt="Módulo Financeiro do ERP" class="w-full h-48 object-contain mb-4 rounded-md">
-                    <h3 class="font-bold text-xl text-white mb-2">Gestão Financeira Enterprise</h3>
-                    <p class="text-slate-400 text-sm">Integração completa de contas, fluxo de caixa e relatórios fiscais.</p>
+    <!-- Carrossel de Projetos -->
+    <section class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-2xl font-bold mb-12 text-center uppercase tracking-[0.2em] text-slate-500">Portfólio de Soluções</h2>
+        <div id="carousel-container" class="relative rounded-2xl border border-slate-800 bg-slate-800/50 p-4 overflow-hidden group">
+            <div id="carousel" class="flex overflow-x-auto snap-x snap-mandatory space-x-4 pb-4 no-scrollbar">
+                <!-- Slide 1 -->
+                <div class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-xl p-6 border border-slate-800">
+                    <img src="img/financeiro.png" alt="Sistema Financeiro" class="w-full h-64 object-contain mb-6">
+                    <h3 class="text-xl font-bold text-white mb-2">ERP Financeiro Customizado</h3>
+                    <p class="text-slate-400">Desenvolvimento de módulos de contas e fluxo de caixa sob demanda.</p>
                 </div>
-
-                <div class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-lg overflow-hidden flex flex-col p-4 hover:bg-slate-950 transition-colors">
-                    <img src="img/glpi.png" alt="Dashboard GLPI Customizado" class="w-full h-48 object-contain mb-4 rounded-md">
-                    <h3 class="font-bold text-xl text-white mb-2">Integração Service Desk GLPI</h3>
-                    <p class="text-slate-400 text-sm">Customização e backend para automação de chamados técnicos.</p>
+                <!-- Slide 2 -->
+                <div class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-xl p-6 border border-slate-800">
+                    <img src="img/glpi.png" alt="GLPI" class="w-full h-64 object-contain mb-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Service Desk & Ativos</h3>
+                    <p class="text-slate-400">Implementação e governança de TI com GLPI e Mayan EDMS.</p>
                 </div>
-
-                <div class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-lg overflow-hidden flex flex-col p-4 hover:bg-slate-950 transition-colors">
-                    <img src="img/gmd-matrix.png" alt="Sistema de Performance Agro GMD Matrix" class="w-full h-48 object-contain mb-4 rounded-md">
-                    <h3 class="font-bold text-xl text-white mb-2">GMD Matrix - Performance Agro</h3>
-                    <p class="text-slate-400 text-sm">Inteligência para otimização de Ganho de Peso Médio Diário em rebanhos.</p>
-                </div>
-
-                <div class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-lg overflow-hidden flex flex-col p-4 hover:bg-slate-950 transition-colors">
-                    <img src="img/supply-chain-sap.png" alt="Monitoramento de Supply Chain com SAP" class="w-full h-48 object-contain mb-4 rounded-md">
-                    <h3 class="font-bold text-xl text-white mb-2">Supply Chain - Visibilidade SAP</h3>
-                    <p class="text-slate-400 text-sm">Painéis de controle para monitoramento de logística e supply chain.</p>
-                </div>
-
-            </div>
-
-            <div class="absolute inset-y-0 left-0 flex items-center px-4 group-hover:opacity-100 opacity-0 transition-opacity pointer-events-none md:pointer-events-auto z-10">
-                <div onclick="scrollManual(-1)" class="bg-slate-900/80 p-3 cursor-pointer pointer-events-auto rounded-full border border-slate-700 text-slate-400 hover:text-blue-500 hover:border-blue-500 transition-all">
-                    <i class="fas fa-chevron-left text-xl"></i>
+                <!-- Slide 3 -->
+                <div class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-xl p-6 border border-slate-800">
+                    <img src="img/gmd-matrix.png" alt="GMD Matrix" class="w-full h-64 object-contain mb-6">
+                    <h3 class="text-xl font-bold text-white mb-2">GMD Matrix (Performance Agro)</h3>
+                    <p class="text-slate-400">Sócio-desenvolvedor de plataforma para otimização de ganho de peso diário.</p>
                 </div>
             </div>
-            <div class="absolute inset-y-0 right-0 flex items-center px-4 group-hover:opacity-100 opacity-0 transition-opacity pointer-events-none md:pointer-events-auto z-10">
-                <div onclick="scrollManual(1)" class="bg-slate-900/80 p-3 cursor-pointer pointer-events-auto rounded-full border border-slate-700 text-slate-400 hover:text-blue-500 hover:border-blue-500 transition-all">
-                    <i class="fas fa-chevron-right text-xl"></i>
-                </div>
-            </div>
-            
         </div>
     </section>
 
-    <footer class="py-10 text-center border-t border-slate-800 mt-10">
-        <p class="text-slate-500 text-sm italic">
-            &copy; 2026 SyntaxCore - Syntax Core Software House.
-        </p>
-    </footer>
+    <!-- Footer Padrão -->
+    <footer id="footer-main"></footer> <!-- Inserir o bloco do rodapé aqui -->
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const carousel = document.getElementById('carousel');
-            const container = document.getElementById('carousel-container');
-            let autoScrollTimer;
-
-            // Função para rolar o carrossel
-            function scrollNext() {
-                const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-                const itemWidth = carousel.firstElementChild.clientWidth + 8; // largura + gap
-                
-                // Se chegou no final, volta para o começo, senão anda 1 item
-                if (carousel.scrollLeft >= maxScroll - 10) {
-                    carousel.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    carousel.scrollBy({ left: itemWidth, behavior: 'smooth' });
-                }
+        const carousel = document.getElementById('carousel');
+        setInterval(() => {
+            if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - 10)) {
+                carousel.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
             }
-
-            // Inicia o loop automático (3000 = 3 segundos)
-            function startAutoScroll() {
-                autoScrollTimer = setInterval(scrollNext, 3000);
-            }
-
-            startAutoScroll();
-
-            // Pausa a animação se o mouse passar por cima (para o cliente conseguir ler)
-            container.addEventListener('mouseenter', () => clearInterval(autoScrollTimer));
-            container.addEventListener('mouseleave', () => startAutoScroll());
-
-            // Função para os botões manuais (setinhas)
-            window.scrollManual = function(direction) {
-                const itemWidth = carousel.firstElementChild.clientWidth + 8;
-                carousel.scrollBy({ left: itemWidth * direction, behavior: 'smooth' });
-            }
-        });
+        }, 4000);
     </script>
 </body>
 </html>
