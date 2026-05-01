@@ -3,92 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SyntaxCore | Engenharia de Software</title>
+    <title>SyntaxCore | Engenharia de Software & Consultoria ERP</title>
+    <link rel="icon" type="image/png" href="img/logo-syntrax-core.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .logo-track { display: flex; width: max-content; animation: scroll 25s linear infinite; }
+        .logo-track:hover { animation-play-state: paused; }
+        .modal-active { overflow: hidden; }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans">
+<body class="bg-slate-900 text-slate-100 font-sans flex flex-col min-h-screen">
 
     <!-- Header -->
-    <nav class="bg-slate-900 border-b border-slate-800 py-4 px-6 sticky top-0 z-50">
+    <nav class="bg-slate-900 border-b border-slate-800 py-4 px-6 sticky top-0 z-50 w-full">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="index.html" class="flex items-center space-x-3">
-                <img src="img/logo-syntrax-core.png" alt="SyntaxCore Logo" class="h-12 w-auto object-contain">
+                <img src="img/logo-syntrax-core.png" alt="SyntaxCore" class="h-12 w-auto object-contain">
                 <span class="text-2xl font-bold tracking-tighter text-white">SYNTAX<span class="text-blue-500 font-light">CORE</span></span>
             </a>
             <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest text-slate-400">
-                <a href="index.html" class="text-blue-500">Home</a>
+                <a href="index.html" class="text-blue-500 border-b-2 border-blue-500 pb-1">Home</a>
                 <a href="sobre.html" class="hover:text-blue-500 transition-colors">Sobre</a>
                 <a href="servicos.html" class="hover:text-blue-500 transition-colors">Serviços</a>
                 <a href="ecossistema.html" class="hover:text-blue-500 transition-colors">Ecossistema</a>
             </div>
-            <a href="https://wa.me/5564992852137" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full text-sm font-bold transition-all">CONTATO</a>
+            <a href="https://wa.me/5564992852137" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-900/20">REUNIÃO</a>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="py-24 px-6 text-center bg-gradient-to-b from-slate-800 to-slate-900">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-6xl font-extrabold tracking-tight text-white mb-6 italic">Arquitetura Robusta para Negócios Complexos</h1>
-            <p class="text-xl text-slate-400 mb-10 leading-relaxed">Consultoria especializada em ecossistemas ERP, Governança de TI e desenvolvimento Full Stack .NET.</p>
-        </div>
-    </section>
+    <main class="flex-grow">
+        <!-- Hero -->
+        <section class="py-24 px-6 text-center bg-gradient-to-b from-slate-800 to-slate-900">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-6xl font-extrabold tracking-tight text-white mb-6 italic">Arquitetura de Software com Rigor Metodológico</h1>
+                <p class="text-xl text-slate-400 mb-10 leading-relaxed text-center">Desenvolvimento escalável em .NET com total conformidade LGPD e transparência total via Kanban para acompanhamento do escopo.</p>
+            </div>
+        </section>
 
-    <!-- Carrossel -->
-    <section class="py-20 px-6 max-w-6xl mx-auto">
-        <div id="carousel-container" class="relative rounded-2xl border border-slate-800 bg-slate-800/50 p-4 overflow-hidden group">
-            <div id="carousel" class="flex overflow-x-auto snap-x snap-mandatory space-x-4 pb-4 no-scrollbar">
-                <div class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-xl p-6 border border-slate-800">
-                    <img src="img/financeiro.png" alt="Sistema Financeiro" class="w-full h-64 object-contain mb-6">
-                    <h3 class="text-xl font-bold text-white mb-2">ERP Financeiro Customizado</h3>
-                    <p class="text-slate-400">Desenvolvimento de módulos de fluxo de caixa sob demanda.</p>
+        <!-- Portfólio com Clique para Modal -->
+        <section class="py-20 px-6 max-w-7xl mx-auto">
+            <h2 class="text-2xl font-bold mb-12 text-center uppercase tracking-widest text-slate-500">Portfólio de Engenharia</h2>
+            <div id="carousel-container" class="relative rounded-2xl border border-slate-800 bg-slate-800/50 p-4 overflow-hidden">
+                <div id="carousel" class="flex overflow-x-auto snap-x snap-mandatory space-x-4 pb-4 no-scrollbar">
+                    
+                    <!-- ERP Financeiro -->
+                    <div onclick="openModal('financeiro')" class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-xl p-8 border border-slate-700 cursor-pointer hover:border-blue-500 transition-all">
+                        <img src="img/financeiro.png" alt="ERP Financeiro" class="w-full h-80 object-contain mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2 italic text-center">ERP Financeiro Customizado</h3>
+                        <p class="text-slate-500 text-xs text-center uppercase tracking-widest">Clique para detalhes de implementação</p>
+                    </div>
+
+                    <!-- Supply Chain SAP -->
+                    <div onclick="openModal('sap')" class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-xl p-8 border border-slate-700 cursor-pointer hover:border-blue-500 transition-all">
+                        <img src="img/supply-chain-sap.png" alt="Supply Chain SAP" class="w-full h-80 object-contain mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2 italic text-center">Supply Chain Integrado SAP</h3>
+                        <p class="text-slate-500 text-xs text-center uppercase tracking-widest">Clique para detalhes de implementação</p>
+                    </div>
+
+                    <!-- OAuth Google -->
+                    <div onclick="openModal('oauth')" class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-xl p-8 border border-slate-700 cursor-pointer hover:border-blue-500 transition-all">
+                        <img src="img/tecnologias-arquitetura/google-oauth.png" alt="OAuth Google" class="w-full h-80 object-contain mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2 italic text-center">Segurança OAuth 2.0</h3>
+                        <p class="text-slate-500 text-xs text-center uppercase tracking-widest">Clique para detalhes de implementação</p>
+                    </div>
+
+                    <!-- GLPI ITIL -->
+                    <div onclick="openModal('glpi')" class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-xl p-8 border border-slate-700 cursor-pointer hover:border-blue-500 transition-all">
+                        <img src="img/glpi.png" alt="GLPI ITIL" class="w-full h-80 object-contain mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2 italic text-center">Service Desk ITIL (GLPI)</h3>
+                        <p class="text-slate-500 text-xs text-center uppercase tracking-widest">Clique para detalhes de implementação</p>
+                    </div>
+
                 </div>
-                <div class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-xl p-6 border border-slate-800">
-                    <img src="img/glpi.png" alt="GLPI" class="w-full h-64 object-contain mb-6">
-                    <h3 class="text-xl font-bold text-white mb-2">Service Desk & Ativos</h3>
-                    <p class="text-slate-400">Governança de TI com GLPI e Mayan EDMS.</p>
-                </div>
-                <div class="snap-center flex-shrink-0 w-full md:w-3/4 bg-slate-900 rounded-xl p-6 border border-slate-800">
-                    <img src="img/gmd-matrix.png" alt="GMD Matrix" class="w-full h-64 object-contain mb-6">
-                    <h3 class="text-xl font-bold text-white mb-2">GMD Matrix (Agro)</h3>
-                    <p class="text-slate-4:00">Otimização de performance pecuária.</p>
-                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Overlay -->
+    <div id="projectModal" class="fixed inset-0 bg-slate-950/90 z-[100] hidden flex items-center justify-center p-6 backdrop-blur-sm">
+        <div class="bg-slate-900 border border-slate-700 max-w-2xl w-full rounded-2xl p-10 relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-500 hover:text-white text-2xl">&times;</button>
+            <div id="modalContent">
+                <!-- Conteúdo Dinâmico -->
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-800 pt-16 pb-8 px-6 mt-20">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 text-sm">
-            <div>
-                <img src="img/logo-syntrax-core.png" alt="SyntaxCore" class="h-10 mb-6 grayscale hover:grayscale-0 transition-all">
-                <p class="text-slate-500">Desenvolvimento de software robusto e arquitetura de sistemas.</p>
+    <footer class="bg-slate-950 border-t border-slate-800 py-12 w-full mt-auto">
+        <div class="w-full flex flex-col items-center">
+            <p class="text-center text-slate-500 text-xs uppercase tracking-widest mb-8">Parceiros Estratégicos & Certificação LGPD</p>
+            <div class="w-full overflow-hidden relative flex justify-center">
+                <div class="logo-track">
+                    <a href="ecossistema.html" class="px-12"><img src="img/logos-parceiros/axiora.png" class="h-10 grayscale opacity-40 hover:grayscale-0 transition-all"></a>
+                    <a href="ecossistema.html" class="px-12"><img src="img/logos-parceiros/ethra.png" class="h-10 grayscale opacity-40 hover:grayscale-0 transition-all"></a>
+                    <a href="ecossistema.html" class="px-12"><img src="img/logos-parceiros/axiora.png" class="h-10 grayscale opacity-40 hover:grayscale-0 transition-all"></a>
+                    <a href="ecossistema.html" class="px-12"><img src="img/logos-parceiros/ethra.png" class="h-10 grayscale opacity-40 hover:grayscale-0 transition-all"></a>
+                </div>
             </div>
-            <div>
-                <h4 class="text-white font-bold mb-6 uppercase tracking-widest">A Empresa</h4>
-                <ul class="text-slate-400 space-y-4">
-                    <li>Mestrando em Ciência da Computação (UFJ)</li>
-                    <li>Especialista em IA e Projetos</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-6 uppercase tracking-widest">Soluções</h4>
-                <ul class="text-slate-400 space-y-4">
-                    <li>Consultoria ERP Health & Agro</li>
-                    <li>Desenvolvimento .NET Full Stack</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-6 uppercase tracking-widest">Ecossistema</h4>
-                <ul class="text-slate-400 space-y-4">
-                    <li>Axiora Arquitetura</li>
-                    <li>Ethra & GMD Matrix</li>
-                </ul>
-            </div>
+            <p class="text-slate-600 text-[10px] italic mt-12">&copy; 2026 SyntaxCore - Excelência em Software.</p>
         </div>
     </footer>
 
     <script>
+        // Modal Logic
+        const projects = {
+            financeiro: {
+                title: "ERP Financeiro Customizado",
+                desc: "Implementação de módulos de fluxo de caixa e DRE em tempo real. Este projeto é implementado através de uma arquitetura modular em .NET Core, permitindo que cada regra de negócio financeira seja isolada e testada individualmente.",
+                tech: "C#, ASP.NET Core, SQL Server, Clean Architecture"
+            },
+            sap: {
+                title: "Supply Chain Integrado SAP",
+                desc: "Solução para controle de estoque e baixas automatizadas. A implementação utiliza Webhooks e APIs para sincronizar dados em tempo real com o SAP, oferecendo dashboards interativos com filtragem cruzada inteligente.",
+                tech: "Integration Services, SAP B1 API, Dashboarding, .NET"
+            },
+            oauth: {
+                title: "Identidade OAuth 2.0 Google",
+                desc: "Camada de segurança para acesso híbrido. Implementamos o protocolo OAuth 2.0 para garantir que a autenticação siga os mais rígidos padrões mundiais de segurança de dados (Identity Server 4).",
+                tech: "OAuth 2.0, OpenID Connect, Google Identity Server"
+            },
+            glpi: {
+                title: "Service Desk ITIL (GLPI)",
+                desc: "Estruturação de helpdesk para ambientes críticos. Implementado através de mapeamento de processos ITIL v4, garantindo SLA, SLM e categorização técnica para governança de TI eficiente.",
+                tech: "GLPI, ITIL, PHP, MySQL, Apache"
+            }
+        };
+
+        function openModal(id) {
+            const content = projects[id];
+            document.getElementById('modalContent').innerHTML = `
+                <h3 class="text-3xl font-bold text-blue-500 mb-6 italic">${content.title}</h3>
+                <p class="text-slate-300 leading-relaxed mb-8 text-justify">${content.desc}</p>
+                <div class="border-t border-slate-800 pt-6">
+                    <span class="text-xs text-slate-500 uppercase tracking-widest block mb-2">Tecnologias Envolvidas:</span>
+                    <p class="text-blue-400 font-mono text-sm">${content.tech}</p>
+                </div>
+            `;
+            document.getElementById('projectModal').classList.remove('hidden');
+            document.body.classList.add('modal-active');
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+            document.body.classList.remove('modal-active');
+        }
+
         const carousel = document.getElementById('carousel');
         setInterval(() => {
             if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - 10)) {
@@ -96,7 +158,7 @@
             } else {
                 carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
             }
-        }, 3000);
+        }, 6000);
     </script>
 </body>
 </html>
