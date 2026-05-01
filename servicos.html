@@ -7,28 +7,49 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans">
+
+    <!-- Header Reutilizado -->
+    <nav class="bg-slate-900 border-b border-slate-800 py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="img/logo-syntrax-core.png" alt="SyntaxCore Logo" class="h-12 w-auto object-contain">
+                <span class="text-2xl font-bold tracking-tighter text-white">SYNTAX<span class="text-blue-500 font-light">CORE</span></span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest text-slate-400">
+                <a href="index.html" class="hover:text-blue-500 transition-colors">Home</a>
+                <a href="sobre.html" class="hover:text-blue-500 transition-colors">Sobre</a>
+                <a href="servicos.html" class="text-blue-500">Serviços</a>
+                <a href="ecossistema.html" class="hover:text-blue-500 transition-colors">Ecossistema</a>
+            </div>
+            <a href="https://wa.me/5564992852137" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full text-sm font-bold transition-all">CONTATO</a>
+        </div>
+    </nav>
+
     <section class="py-20 px-6 max-w-6xl mx-auto">
         <h1 class="text-4xl font-bold text-center mb-16">Especialidades Técnicas</h1>
-        
         <div class="space-y-12">
-            <!-- Serviço 1 -->
             <div class="flex flex-col md:flex-row gap-8 items-center bg-slate-800/30 p-8 rounded-2xl border border-slate-800">
                 <div class="text-5xl text-blue-500 font-bold opacity-20">01</div>
                 <div>
-                    <h2 class="text-2xl font-bold mb-3 text-white">Consultoria em ERP e Fluxos de Trabalho</h2>
-                    <p class="text-slate-400">Análise e otimização de processos corporativos. Especialista na implementação de GLPI para Service Desk e Mayan EDMS para gestão documental automatizada.</p>
+                    <h2 class="text-2xl font-bold mb-3 text-white">Consultoria ERP e Fluxos de Trabalho</h2>
+                    <p class="text-slate-400">Implementação de GLPI para Service Desk e Mayan EDMS para gestão documental.</p>
                 </div>
             </div>
-
-            <!-- Serviço 2 -->
             <div class="flex flex-col md:flex-row gap-8 items-center bg-slate-800/30 p-8 rounded-2xl border border-slate-800">
                 <div class="text-5xl text-blue-500 font-bold opacity-20">02</div>
                 <div>
                     <h2 class="text-2xl font-bold mb-3 text-white">Desenvolvimento Full Stack .NET</h2>
-                    <p class="text-slate-400">Sistemas escaláveis utilizando C#, ASP.NET Core, MVC, e SQL Server. Foco em arquitetura limpa e performance de alta latência.</p>
+                    <p class="text-slate-400">Sistemas escaláveis com C#, ASP.NET Core e SQL Server.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Footer Reutilizado -->
+    <footer class="bg-slate-950 border-t border-slate-800 pt-16 pb-8 px-6 mt-20">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-slate-600 text-xs italic">&copy; 2026 SyntaxCore - Santa Helena de Goiás - GO.</p>
+        </div>
+    </footer>
 </body>
 </html>
